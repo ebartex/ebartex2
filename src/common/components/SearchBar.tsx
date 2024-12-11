@@ -1,15 +1,15 @@
 'use client';
 import { useState, useRef } from "react";
 import { Search, X } from "lucide-react";
-import { useRouter, useSearchParams } from "next/navigation"; 
+import { useParams, useRouter} from "next/navigation"; 
 
 const SearchBar: React.FC = () => {
-    const searchParams = useSearchParams();
-    const initialSearchTerm = searchParams.get('q') || ''; // Pobranie wartości parametru 'q' z URL    
-    const [inputValue, setInputValue] = useState(initialSearchTerm);
+    const params = useParams(); // Pobranie wszystkich parametrów
+    const query = params.query; // Pobranie konkretnego parametru 'query'
+
+    const [inputValue, setInputValue] = useState(decodeURIComponent(query ? decodeURIComponent(query as string) : '')); // Ustawienie początkowej wartości inputu
     const inputRef = useRef<HTMLInputElement>(null);
     const router = useRouter();
-
     const handleSearchSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (inputValue.trim() !== '') {
