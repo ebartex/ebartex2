@@ -18,7 +18,7 @@ const query = params?.query ? decodeURIComponent(params.query) : "";
       <Sidebar />
 
       {/* Results */}
-      <Products />  
+      <Products query={query} />  
 
   </div>
 

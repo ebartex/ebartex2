@@ -1,4 +1,0 @@
-
-
-const GET = {};
-const POST = {};
