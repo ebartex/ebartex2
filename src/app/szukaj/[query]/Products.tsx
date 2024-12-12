@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Product } from "@/types"; // Zaimportuj wspólny typ
+import { Product } from "@/types/types"; // Zaimportuj wspólny typ
 
 type ProductProps = {
   products: Product[]; // Tablica produktów
