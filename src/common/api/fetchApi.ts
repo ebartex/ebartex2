@@ -12,22 +12,7 @@ export default function FetchClient() {
       return response.json();
     };
   
-    const post = async <T>(endpoint: string, body: any): Promise<T> => {
-      const response = await fetch(`${endpoint}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(body),
-      });
   
-      if (!response.ok) {
-        throw new Error(`POST request failed with status ${response.status}`);
-      }
-  
-      return response.json();
-    };
-  
-    return { get, post };
+    return { get};
   }
   

@@ -2,7 +2,7 @@ import { FC } from "react";
 
 type ProductProps = {
     query: string;
-    products: any[]; // Zmiana na tablicę produktów
+    products: string[]; // Zmiana na tablicę produktów
 }
 
 const Products: FC<ProductProps> = ({products }) => {
