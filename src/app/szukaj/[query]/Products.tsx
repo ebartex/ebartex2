@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 type Product = {
-    tw_id: string; // Zakładając, że tw_id jest typu string
+    tw_id: number; // Zakładając, że tw_id jest typu string
     nazwa: string; // Zakładając, że nazwa jest typu string
     // Inne właściwości produktu, jeśli są dostępne
   };
