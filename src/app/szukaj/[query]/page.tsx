@@ -1,3 +1,4 @@
+'use client';
 import Navbar from "@/common/components/Navbar";
 import Sidebar from "./Sidebar";
 import Products from "./Products";
