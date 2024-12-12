@@ -6,12 +6,9 @@ import { useParams } from "next/navigation";
 import BottomBar from "./BottomBar";
 import FetchClient from "@/common/api/fetchApi";
 import { useState, useEffect, useCallback } from "react";
-
+import { Product } from "@/types/types"; // Zaimportuj wspólny typ
 export default function Home() {
-  type Product = {
-    nazwa: string;
-    // inne właściwości produktu, które mogą być w odpowiedzi
-  };
+
 
   const params = useParams<{ query: string }>();
   const query = params?.query ? decodeURIComponent(params.query) : "";

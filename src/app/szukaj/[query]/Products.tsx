@@ -1,16 +1,10 @@
 import { FC } from "react";
 
-type Product = {
-    tw_id: number; // Zakładając, że tw_id jest typu string
-    nazwa: string; // Zakładając, że nazwa jest typu string
-    // Inne właściwości produktu, jeśli są dostępne
-  };
-  
-  type ProductProps = {
-    query: string;
-    products: Product[]; // Zmieniamy na tablicę typu Product
-  };
+import { Product } from "@/types/types"; // Zaimportuj wspólny typ
 
+type ProductProps = {
+  products: Product[]; // Zmiana na Product[]
+};
 const Products: FC<ProductProps> = ({products }) => {
   return (
     <div className="flex-1 bg-white p-4">
