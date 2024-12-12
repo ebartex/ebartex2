@@ -5,7 +5,7 @@ type ProductProps = {
     products: any[]; // Zmiana na tablicę produktów
 }
 
-const Products: FC<ProductProps> = ({ query, products }) => {
+const Products: FC<ProductProps> = ({products }) => {
   return (
     <div className="flex-1 bg-white p-4">
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-1 gap-4">

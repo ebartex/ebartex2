@@ -1,12 +1,10 @@
-"use client";
-
 import Navbar from "@/common/components/Navbar";
 import Sidebar from "./Sidebar";
 import Products from "./Products";
 import { useParams } from "next/navigation";
 import BottomBar from "./BottomBar";
 import FetchClient from "@/common/api/fetchApi";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function Home() {
   type Product = {
@@ -18,21 +16,20 @@ export default function Home() {
   const query = params?.query ? decodeURIComponent(params.query) : "";
   const [products, setProducts] = useState<Product[]>([]);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     const client = FetchClient();
 
     try {
       const data = await client.get<{ Product: Product[] }>(`https://bapi.ebartex.pl/products/format5.json?Product-nazwa=?${query}?`);
-
       setProducts(data.Product); // Zakładając, że odpowiedź zawiera pole 'products'
     } catch (error) {
       console.error("Error fetching products:", error);
     }
-  };
+  }, [query]); // Dodajemy 'query' jako zależność, ponieważ fetchData zależy od query
 
   useEffect(() => {
     fetchData(); // Pobierz dane po załadowaniu komponentu
-  }, [query]); // Zmiana zapytania powoduje ponowne pobranie danych
+  }, [fetchData]); // Ponowne uruchomienie efektu, gdy fetchData się zmieni
 
   return (
     <div>
