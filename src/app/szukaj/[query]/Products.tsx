@@ -1,11 +1,12 @@
 import { FC } from "react";
-
-import { Product } from "@/types/types"; // Zaimportuj wspólny typ
+import { Product } from "@/types"; // Zaimportuj wspólny typ
 
 type ProductProps = {
-  products: Product[]; // Zmiana na Product[]
+  products: Product[]; // Tablica produktów
+  query: string; // Dodaj 'query' do propsów
 };
-const Products: FC<ProductProps> = ({products }) => {
+
+const Products: FC<ProductProps> = ({ products }) => {
   return (
     <div className="flex-1 bg-white p-4">
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-1 gap-4">
@@ -32,6 +33,6 @@ const Products: FC<ProductProps> = ({products }) => {
       </div>
     </div>
   );
-}
+};
 
 export default Products;
