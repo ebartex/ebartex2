@@ -18,7 +18,7 @@ export default function Home() {
     const client = FetchClient();
 
     try {
-      const data = await client.get<{ Product: Product[] }>(`https://bapi.ebartex.pl/products/format5.json?Product-nazwa=?${query}?`);
+      const data = await client.get<{ Product: Product[] }>(`https://bapi.ebartex.pl/products/format5.json?Product-nazwa=?${query}?&Product&Product-cenad=!0.0`);
       setProducts(data.Product); // Zakładając, że odpowiedź zawiera pole 'products'
     } catch (error) {
       console.error("Error fetching products:", error);
