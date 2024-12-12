@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Product } from "@/types/types"; // Zaimportuj wspólny typ
-
+import Image from "next/image";
 type ProductProps = {
   products: Product[]; // Tablica produktów
   query: string; // Dodaj 'query' do propsów
@@ -18,12 +18,19 @@ const Products: FC<ProductProps> = ({ products }) => {
             >
               <h3 className="text-lg font-semibold text-gray-800">{product.nazwa}</h3>
               <hr />
-              <p className="text-gray-600 text-sm mt-2">{product.nazwa}</p>
-              <div className="mt-4 flex justify-between items-center">
-                <span className="text-lg font-bold text-gray-800">{product.nazwa} zł</span>
-                <button className="bg-blue-500 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-600">
-                  Dodaj do koszyka
-                </button>
+              <div className="flex">
+              <div className="w-1/4">
+              <Image
+                width={100}
+                height={100}
+                src={product.photo_512 || "/products_thumbs.png"}
+                alt={product.nazwa}
+                className="w-32 h-32 object-cover"
+                />
+              </div>
+              <div className="flex-1">
+                test
+              </div>
               </div>
             </div>
           ))
