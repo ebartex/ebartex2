@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 import Products from "./Products";
 import { useParams } from "next/navigation";
 
-export default function page() {
+export default function Home() {
 
 const params = useParams<{query: string}>();
 const query = params?.query ? decodeURIComponent(params.query) : "";
