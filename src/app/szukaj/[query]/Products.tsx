@@ -3,6 +3,7 @@ import { Product } from "@/types/types"; // Zaimportuj wspólny typ
 import Image from "next/image";
 import ProductDetails from "./ProductDetails";
 import ListingView from "./ListingView";
+import Link from "next/link";
 
 type ProductProps = {
   products: Product[]; // Tablica produktów
@@ -38,15 +39,15 @@ const Products: FC<ProductProps> = ({ products }) => {
             >
               {/* Obrazek */}
               <div className={`${isGrid ? "w-full" : "flex justify-center items-center w-1/4"}`}>
+              <Link href={`/products/view/${product.tw_id}/${product.slug}`}>
                 <Image
                   width={256}
                   height={256}
                   src={product.photo_512 || "/products_thumbs.png"}
                   alt={product.nazwa}
-                  className={`object-cover ${
-                    isGrid ? "w-64 h-64" : ""
-                  }`}
+             
                 />
+                </Link>
               </div>
               {/* Szczegóły */}
               <div className="flex-1">
