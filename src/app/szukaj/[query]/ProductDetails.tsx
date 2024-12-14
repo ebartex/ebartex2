@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Product } from "@/types/types"; // Zaimportuj wspólny typ
+import Link from "next/link";
 
 
 type ProductDetailsProps = {
@@ -8,7 +9,7 @@ type ProductDetailsProps = {
 const ProductDetails: FC<ProductDetailsProps> = ({ product }) => {
   return (
     <div className="flex-1 bg-white p-4">
-        <span>Kategoria:</span> <span>{product.kategoria}</span>
+        <span>Kategoria:</span> <span><Link href={`/categories/view/${product.xt_id}/${product.slug_kategoria}`}>{product.kategoria}</Link></span>
         <div className="flex items-center space-x-1">
         {product.marka ? (
             <span>Marka: {product.marka}</span>
