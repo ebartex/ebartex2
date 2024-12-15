@@ -27,7 +27,7 @@ export default function Category() {
     } catch (error) {
       console.error("Error fetching products:", error);
     }
-  }, []); // Dodajemy 'query' jako zależność, ponieważ fetchData zależy od query
+  }, [xt_id]); // Dodajemy 'query' jako zależność, ponieważ fetchData zależy od query
 
   useEffect(() => {
     fetchData(); // Pobierz dane po załadowaniu komponentu

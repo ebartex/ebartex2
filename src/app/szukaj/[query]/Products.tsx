@@ -71,7 +71,7 @@ const Products: FC<ProductProps> = ({ products = [], query = "" }) => {
         // Komunikat, gdy brak produktów
         <div className="text-center mt-8">
           <p className="text-xl text-gray-500">
-            Nie znaleziono produktów dla zapytania "{query}".
+            Nie znaleziono produktów dla zapytania {query}.
           </p>
           <p className="text-gray-500">Spróbuj ponownie z innym zapytaniem.</p>
         </div>
