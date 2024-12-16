@@ -35,8 +35,9 @@ const SearchBar: React.FC = () => {
                     placeholder="Szukaj..."
                     value={inputValue}
                     onChange={handleInputChange}
-                    className={`pl-6 pr-10 block w-full h-10 rounded-full text-sm border border-sky-700 border-2 focus:outline-none ${
-                        inputValue ? "bg-white" : "bg-slate-100 hover:bg-white"
+                    className={`focus:ring-2 focus:ring-sky-600 focus:ring-offset-2 focus:outline-none pl-6 pr-10 block w-full h-10 rounded-md text-sm border border-sky-700 border-1  ${
+                    // className={`focus:ring-2 focus:ring-sky-600 focus:ring-offset-1 focus:outline-none bg-white h-10 px-4 text-sm border border-gray-300 rounded-md focus:outline-none ${
+                  inputValue ? "bg-white" : "bg-slate-100 hover:bg-white"
                     }`}
                 />
                 {/* Ikona krzyżyka - widoczna tylko, gdy jest tekst */}

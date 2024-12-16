@@ -30,7 +30,17 @@ const ProductDetails: FC<ProductDetailsProps> = ({ product }) => {
           <span>Dostępność:</span> 
           <div className="w-3 h-3 bg-red-500 rounded-full"></div>
           <span className="">brak w magazynie</span>
-        </div>          
+        </div>             
+        )}
+        {product.kodpaskowy != "" ? (
+        <div className="flex items-center space-x-1">
+          <span className="txt-md">Kodpaskowy:</span> 
+          <span className="text-md">{product.kodpaskowy}</span>
+        </div>         
+        ) : (
+          <div>
+    
+        </div>               
         )}
     </div>
   );
