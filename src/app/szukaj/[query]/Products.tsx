@@ -37,12 +37,12 @@ const Products: FC<ProductProps> = ({ products = [], query = "" }) => {
               <div
                 key={product.tw_id}
                 className={`bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow ${
-                  !isGrid && "flex items-center space-x-4"
+                  !isGrid && "flex items-center"
                 }`}
               >
                 {/* Obrazek */}
                 <div
-                  className={`${
+                  className={`bg-slate-200 ${
                     isGrid ? "w-full" : "flex justify-center items-center w-1/4"
                   }`}
                 >
@@ -55,13 +55,40 @@ const Products: FC<ProductProps> = ({ products = [], query = "" }) => {
                     />
                   </Link>
                 </div>
+
                 {/* Szczegóły */}
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    {product.nazwa}
-                  </h3>
-                  <hr />
-                  <ProductDetails product={product} />
+                <div className={`flex-1 ${isGrid ? "mt-4" : "ml-4"}`}>
+                  {isGrid ? (
+                    // Widok siatki: kolumny pod sobą
+                    <div className="flex flex-col space-y-2">
+                      {/* Pierwsza kolumna detail */}
+                      <div className="w-full">
+                        <h1 className="text-sm font-semibold text-gray-800">{product.nazwa}</h1>
+                        <ProductDetails product={product} />
+                      </div>
+
+                      {/* Druga kolumna detail */}
+                      <div className="w-full">
+                        <h1 className="text-lg font-semibold text-gray-800">{product.cenad}zł {product.jm}</h1>
+                        <ProductDetails product={product} />
+                      </div>
+                    </div>
+                  ) : (
+                    // Widok listy: kolumny obok siebie
+                    <div className="flex flex-row space-x-2">
+                      {/* Pierwsza kolumna detail */}
+                      <div className="w-2/5">
+                        <h1 className="text-sm font-semibold text-gray-800">{product.nazwa}</h1>
+                        <ProductDetails product={product} />
+                      </div>
+
+                      {/* Druga kolumna detail */}
+                      <div className="w-2/5">
+                        <h1 className="text-lg font-semibold text-gray-800">{product.cenad}zł {product.jm}</h1>
+                        <ProductDetails product={product} />
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

@@ -58,7 +58,7 @@ function ProductComponent() {
             {/* Szczegóły */}
             <div className="flex-1 pl-4">
               <h3 className="text-lg font-semibold text-gray-800">{product.nazwa}</h3>
-              <hr className="my-2" />
+             
               <ProductDetails product={product} />
             </div>
           </div>

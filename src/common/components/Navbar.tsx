@@ -4,7 +4,8 @@ import Link from 'next/link';
 
 const Navbar: React.FC = () => {
     return (
-        <nav className="p-2 border-b border-sky-600 bg-white flex items-center justify-between">
+        <>
+        <nav className="p-2 shadow-md bg-white flex items-center justify-between shadow-slate-300/50">
             <div className="flex-shrink-0">
                 <Link href="/"> 
                 <Image alt="logo" width={100} height={10} src="/bartex.png" />
@@ -14,6 +15,8 @@ const Navbar: React.FC = () => {
                 <SearchBar />
             </div>
         </nav>
+        <br/>
+        </>
     );
 };
 
