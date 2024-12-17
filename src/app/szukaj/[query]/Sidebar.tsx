@@ -9,7 +9,7 @@ const Sidebar: FC = () => {
         <li className="mb-4">
           <div className="inline-flex items-center">
           <div className="inline-flex items-center">
-  <label className="flex items-center cursor-pointer relative" for="check-2">
+  <label className="flex items-center cursor-pointer relative" htmlFor="check-2">
     <input type="checkbox"
     
       className="peer focus:ring-2 focus:ring-sky-600 focus:ring-offset-2 h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-100 checked:bg-white checked:border-slate-100"
