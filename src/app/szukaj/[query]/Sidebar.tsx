@@ -1,5 +1,5 @@
-import { FC, useState } from "react";
-import { Check } from "lucide-react"; // Importuj ikonę Check z lucide-react
+import { FC} from "react";
+
 
 const Sidebar: FC = () => {
   return (
