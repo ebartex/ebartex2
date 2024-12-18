@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Grid, LayoutGrid, List } from "lucide-react"; // Import ikon
+import { List } from "lucide-react"; // Import ikon
 
 type ListingViewProps = {
   toggleView: (view: string) => void; // Funkcja do przełączania widoku
